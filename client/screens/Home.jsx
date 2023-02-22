@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
 import { SafeAreaView } from "react-native-safe-area-context";
+import BottomTab from '../components/BottomTab';
 import MenuButton from '../components/MenuButton';
 
 export default function Home({setPage}) {
@@ -112,6 +113,7 @@ export default function Home({setPage}) {
             </View>
           </View>
         </View>
+        <BottomTab setPage={setPage} page="Home" />
       </View>
       <StatusBar style="auto" />
     </SafeAreaView>

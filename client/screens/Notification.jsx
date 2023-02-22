@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { Image, StyleSheet, Text, View, TouchableOpacity, Pressable } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import BottomTab from '../components/BottomTab';
 import NotificationCard from "../components/NotificationCard";
 
 export default function Notification({setPage}){
@@ -8,7 +9,7 @@ export default function Notification({setPage}){
         <SafeAreaView style={styles.container}>
             <View style={styles.container1}>
                 <View style={styles.upperBox}>
-                    <Pressable style={styles.returnBox} onPress={() => setPage(true)}>
+                    <Pressable style={styles.returnBox} onPress={() => setPage('Home')}>
                         <Image 
                         source={require("../assets/before.png")}
                         style={styles.returnIcon} ></Image>
@@ -32,6 +33,7 @@ export default function Notification({setPage}){
                     <NotificationCard read={false}/>
                     <NotificationCard read={false}/>
                 </View>
+                <BottomTab setPage={setPage} page="Notification"/>
             </View>
             <StatusBar style="auto" />
         </SafeAreaView>
