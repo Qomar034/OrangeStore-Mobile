@@ -24,13 +24,12 @@ export default function NotificationCard({read}){
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     borderLeftWidth: 8,
     borderWidth: 1,
     borderColor: "#ff6823",
     width: "100%",
-    height: 110,
-    marginVertical: 17,
+    height: 100,
+    marginVertical: 10,
     borderRadius: 5,
     flexDirection: "row"
   },
@@ -40,7 +39,7 @@ const styles = StyleSheet.create({
   },
   time: {
     marginLeft: 15,
-    marginTop: 10,
+    marginTop: 5,
     color: 'gray',
   },
   title: {
