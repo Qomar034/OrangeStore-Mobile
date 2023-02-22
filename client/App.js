@@ -1,12 +1,9 @@
-import { NavigationContainer } from "@react-navigation/native";
+import { useState } from "react";
 import Home from "./screens/Home";
 import Notification from "./screens/Notification";
 
 export default function App() {
-  return (
-    <NavigationContainer>
-      <Notification/>
-      {/* <Home/>       */}
-    </NavigationContainer>
-  );
+  let [page, setPage] = useState('Home')
+  if (page == 'Home') return (<Home setPage={setPage}/>)
+  if (page == 'Notification') return (<Notification setPage={setPage}/>)
 }

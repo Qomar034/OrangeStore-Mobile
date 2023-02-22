@@ -2,7 +2,7 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import NotificationCard from "../components/NotificationCard";
 
-export default function Notification(){
+export default function Notification({setPage}){
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.header}>
