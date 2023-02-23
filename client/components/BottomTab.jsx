@@ -10,22 +10,27 @@ export default function BottomTab({setPage, page}){
                     ></Image>
                 </View>
             </Pressable>
+
             <View style={{ width: "100%", height: "100%", backgroundColor: "white", marginTop: 15, flexDirection: 'row', justifyContent: "space-around", alignItems: "flex-start" }}>
-                <View style={{ width: 60, height: 50, backgroundColor: "transparent", flexDirection: 'column', justifyContent: 'center', alignItems: "center", marginTop: 10 }}>
+                <Pressable onPress={() => {page == 'Notification' ? setPage('Sales') : setPage('Chat')}}
+                style={{ width: 60, height: 50, backgroundColor: "transparent", flexDirection: 'column', justifyContent: 'center', alignItems: "center", marginTop: 10 }}>
                     <Image style={{ width: 35, height: 35 }}
-                        source={page == 'Home' ? require("../assets/chat.png") : require("../assets/suitcase.png")}
+                        source={page == 'Notification' ? require("../assets/suitcase.png") : require("../assets/chat.png")}
                     ></Image>
                     <Text style={{ fontSize: 12, color: "#ff6823", fontWeight: "500" }}>
-                        {page == 'Home' ? "Chat" : "Data Sales"} </Text>
-                </View>
+                        {page == 'Notification' ? "Data Sales" : "Chat"} </Text>
+                </Pressable>
+
                 <View></View>
-                <View style={{ width: 60, height: 50, backgroundColor: "transparent", flexDirection: 'column', justifyContent: 'center', alignItems: "center", marginTop: 10 }}>
+                
+                <Pressable onPress={() => setPage('User')}
+                style={{ width: 60, height: 50, backgroundColor: "transparent", flexDirection: 'column', justifyContent: 'center', alignItems: "center", marginTop: 10, zIndex: 50 }}>
                     <Image style={{ width: 35, height: 35 }}
                         source={require("../assets/user.png")}
                     ></Image>
                     <Text style={{ fontSize: 12, color: "#ff6823", fontWeight: "500" }}>
                         Akun </Text>
-                </View>
+                </Pressable>
             </View>
         </View>
     )
