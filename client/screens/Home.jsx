@@ -1,121 +1,135 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
 import { SafeAreaView } from "react-native-safe-area-context";
+
 import BottomTab from '../components/BottomTab';
 import MenuButton from '../components/MenuButton';
 
 export default function Home({setPage}) {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.container1}>
-        <View style={styles.upperBox}>
-          <View style={styles.middleBox}>
-            <Text style={styles.text2}>KODE TOKO: 12019982 | PADANG</Text>
-            <Text style={styles.text1}>TOKO SUMBER JAYA</Text>
-            <Text style={styles.text2}>Sales: THEO ADIPTA</Text>
-            
-            <Pressable 
-            onPress={() => setPage('Notification')}
-            style={({pressed}) => pressed
-              ? styles.notificationBoxPressed
-              : styles.notificationBox
-              }>
-                <Image 
-                source={require("../assets/bell.png")}
-                style={styles.notification} ></Image>
-            </Pressable>
+        <View style={styles.outerSide}>
+            <View style={styles.innerSide}>
+                <View style={styles.header}>
+                    <Text style={styles.headerText1}>
+                        KODE TOKO: 12019982 | PADANG</Text>
+                    <Text style={styles.headerText2}>
+                        TOKO SUMBER JAYA</Text>
+                    <Text style={styles.headerText1}>
+                        Sales: THEO ADIPTA</Text>
+                    
+                    <Pressable 
+                      onPress={() => setPage('Notification')}
+                      style={({pressed}) => pressed
+                      ? styles.notificationBoxPressed
+                      : styles.notificationBox
+                      }>
+                        <Image 
+                        source={require("../assets/bell.png")}
+                        style={styles.notification}></Image>
+                    </Pressable>
+                </View>
 
-          </View>
+                <View style={styles.displayContainer}>
+                    <View style={styles.displayTitle}>
+                        <Text style={styles.displayText1}>
+                          Ringkasan Pesanan</Text>
+                    </View>
 
-          <View style={styles.lowerBox}>
-              <View style={styles.container3}>
-                <Text style={styles.text3}>Ringkasan Pesanan</Text>
-              </View>
-              <View style={styles.container2}>
-                  <View style={styles.displayBox}>
-                    <Text style={styles.text4}>Pending</Text>
-                    <Text style={styles.text5}>0</Text>
-                  </View>
-                  <View style={styles.displayBox}>
-                    <Text style={styles.text4}>Dalam Proses</Text>
-                    <Text style={styles.text5}>0</Text>
-                  </View>
-              </View>
-              <View style={styles.container4}>
-                  <Text style={styles.text6}>Total Tagihan</Text>
-                  <Text style={styles.text7}>Rp. 0</Text>
-              </View>
-          </View>
+                    <View style={styles.displayInfo}>
+                        <View style={styles.displayBox}>
+                            <Text style={styles.displayItemText}>
+                              Pending</Text>
+                            <Text style={styles.displayValueText}>
+                              0</Text>
+                        </View>
 
-          <View style={styles.menuBox}>
-            <View style={styles.menuRow}>
-              <Pressable 
-              style={({pressed}) => pressed ? styles.pressedMenu : styles.menu}
-              children={({pressed}) => 
-                <MenuButton 
-                  pressed={pressed} 
-                  text1={"Buat"} 
-                  text2={"Pesanan"} 
-                  image={require("../assets/doc.png")}/>}
-              ></Pressable>
+                        <View style={styles.displayBox}>
+                            <Text style={styles.displayItemText}>
+                              Dalam Proses</Text>
+                            <Text style={styles.displayValueText}>
+                              0</Text>
+                        </View>
+                    </View>
+                    
+                    <View style={styles.displayFooter}>
+                          <Text style={styles.displayFooterText1}>
+                            Total Tagihan</Text>
+                          <Text style={styles.displayFooterText2}>
+                            Rp. 0</Text>
+                    </View>
+                </View>
 
-              <Pressable 
-              style={({pressed}) => pressed ? styles.pressedMenu : styles.menu}
-              children={({pressed}) => 
-                <MenuButton 
-                  pressed={pressed} 
-                  text1={"Riwayat"} 
-                  text2={"Pesanan"} 
-                  image={require("../assets/cart.png")}/>}
-              ></Pressable>
+                <View style={styles.menuBox}>
+                    <View style={styles.menuRow}>
+                        <Pressable 
+                          style={({pressed}) => pressed ? styles.pressedMenu : styles.menu}
+                          children={({pressed}) => 
+                            <MenuButton 
+                              pressed={pressed} 
+                              text1={"Buat"} 
+                              text2={"Pesanan"} 
+                              image={require("../assets/doc.png")}/>}
+                        ></Pressable>
 
-              <Pressable 
-              style={({pressed}) => pressed ? styles.pressedMenu : styles.menu}
-              children={({pressed}) => 
-                <MenuButton 
-                  pressed={pressed} 
-                  text1={"Riwayat"} 
-                  text2={"Bayar"} 
-                  image={require("../assets/wallet.png")}/>}
-              ></Pressable>
+                        <Pressable 
+                          style={({pressed}) => pressed ? styles.pressedMenu : styles.menu}
+                          children={({pressed}) => 
+                            <MenuButton 
+                              pressed={pressed} 
+                              text1={"Riwayat"} 
+                              text2={"Pesanan"} 
+                              image={require("../assets/cart.png")}/>}
+                        ></Pressable>
+
+                        <Pressable 
+                          style={({pressed}) => pressed ? styles.pressedMenu : styles.menu}
+                          children={({pressed}) => 
+                            <MenuButton 
+                              pressed={pressed} 
+                              text1={"Riwayat"} 
+                              text2={"Bayar"} 
+                              image={require("../assets/wallet.png")}/>}
+                        ></Pressable>
+                    </View>
+
+                    <View style={styles.menuRow}>
+                        <Pressable 
+                          style={({pressed}) => pressed ? styles.pressedMenu : styles.menu}
+                          children={({pressed}) => 
+                            <MenuButton 
+                              pressed={pressed} 
+                              text1={"Daftar"} 
+                              text2={"Supir"} 
+                              image={require("../assets/people.png")}/>}
+                        ></Pressable>
+
+                        <Pressable 
+                          style={({pressed}) => pressed ? styles.pressedMenu : styles.menu}
+                          children={({pressed}) => 
+                            <MenuButton 
+                              pressed={pressed} 
+                              text1={"Daftar"} 
+                              text2={"Alamat"} 
+                              image={require("../assets/location.png")}/>}
+                        ></Pressable>
+
+                        <Pressable 
+                          style={({pressed}) => pressed ? styles.pressedMenu : styles.menu}
+                          children={({pressed}) => 
+                            <MenuButton 
+                              pressed={pressed} 
+                              text1={"Retur"} 
+                              text2={"Barang"} 
+                              image={require("../assets/switch.png")}/>}
+                        ></Pressable>
+                    </View>
+                </View>
             </View>
 
-            <View style={styles.menuRow}>
-              <Pressable 
-              style={({pressed}) => pressed ? styles.pressedMenu : styles.menu}
-              children={({pressed}) => 
-                <MenuButton 
-                  pressed={pressed} 
-                  text1={"Daftar"} 
-                  text2={"Supir"} 
-                  image={require("../assets/people.png")}/>}
-              ></Pressable>
-
-              <Pressable 
-              style={({pressed}) => pressed ? styles.pressedMenu : styles.menu}
-              children={({pressed}) => 
-                <MenuButton 
-                  pressed={pressed} 
-                  text1={"Daftar"} 
-                  text2={"Alamat"} 
-                  image={require("../assets/location.png")}/>}
-              ></Pressable>
-
-              <Pressable 
-              style={({pressed}) => pressed ? styles.pressedMenu : styles.menu}
-              children={({pressed}) => 
-                <MenuButton 
-                  pressed={pressed} 
-                  text1={"Retur"} 
-                  text2={"Barang"} 
-                  image={require("../assets/switch.png")}/>}
-              ></Pressable>
-            </View>
-          </View>
+            <BottomTab setPage={setPage} page="Home" />
         </View>
-        <BottomTab setPage={setPage} page="Home" />
-      </View>
-      <StatusBar style="auto" />
+        <StatusBar style="auto" />
     </SafeAreaView>
   );
 }
@@ -128,24 +142,25 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  container1: {
+  outerSide: {
     flex: 1,
     paddingTop: 10,
-    backgroundColor: 'black',
+    backgroundColor: 'transparent',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  upperBox: {
+  innerSide: {
     flex: 1,
     width: "100%",
     height: "25%",
+    backgroundColor: "#ff6823",
     borderBottomLeftRadius: 25,
     borderBottomRightRadius: 25,
-    backgroundColor: "#ff6823",
     position: 'absolute',
     top: "0%",
   },
-  middleBox: {
+
+  header: {
     width: "90%",
     height: "50%",
     backgroundColor: "transparent",
@@ -154,20 +169,31 @@ const styles = StyleSheet.create({
     top: "5%",
     left: "5%"
   },
-  lowerBox: {
+  headerText2: {
+    color: "white",
+    fontSize: 18,
+    fontWeight: "bold",
+    marginVertical: 2,
+  },
+  headerText1: {
+    color: "white",
+    fontSize: 14,
+    fontWeight: "bold",
+    marginVertical: 3,
+  },
+
+  displayContainer: {
     width: "90%",
     height: "90%",
+    backgroundColor: "white",
+    borderRadius: 15,
+    position: 'relative',
+    left: "5%",
 
     flexDirection: "column",
     alignItems: 'center',
     justifyContent: 'center',
-
-    backgroundColor: "white",
     
-    position: 'relative',
-    left: "5%",
-    
-    borderRadius: 15,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -175,56 +201,9 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.99,
     shadowRadius: 3.84,
-    
     elevation: 9,
-
   },
-
-  text1: {
-    color: "white",
-    fontSize: 18,
-    fontWeight: "bold",
-    marginVertical: 2,
-  },
-
-  text2: {
-    color: "white",
-    fontSize: 14,
-    fontWeight: "bold",
-    marginVertical: 3,
-  },
-
-  text3: {
-    color: "black",
-    fontSize: 14,
-    fontWeight: "bold",
-    flex: 1,
-  },
-
-  text4: {
-    marginLeft: 20,
-    marginTop: 10,
-    fontWeight: "bold"
-  },
-
-  text5: {
-    marginLeft: 25,
-    fontSize: 25,
-    fontWeight: "bold"
-  },
-
-  text6: {
-    fontSize: 15,
-    fontWeight: "bold"
-  },
-
-  text7: {
-    fontSize: 20,
-    color: "tomato",
-    fontWeight: "bold"
-  },
-
-  container2: {
+  displayInfo: {
     flex: 3,
     flexDirection: "row",
     justifyContent: "center",
@@ -233,8 +212,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "40%",
   },
-
-  container3: {
+  displayTitle: {
     flex : 1,
     marginTop: 5,
     flexDirection: "row",
@@ -243,8 +221,32 @@ const styles = StyleSheet.create({
     width: "85%",
     height: "40%",
   },
-
-  container4: {
+  displayText1: {
+    color: "black",
+    fontSize: 14,
+    fontWeight: "bold",
+    flex: 1,
+  },
+  displayItemText: {
+    marginLeft: 20,
+    marginTop: 10,
+    fontWeight: "bold"
+  },
+  displayValueText: {
+    marginLeft: 25,
+    fontSize: 25,
+    fontWeight: "bold"
+  },
+  displayFooterText1: {
+    fontSize: 15,
+    fontWeight: "bold"
+  },
+  displayFooterText2: {
+    fontSize: 20,
+    color: "tomato",
+    fontWeight: "bold"
+  },
+  displayFooter: {
     flex : 2,
     marginTop: 15,
     flexDirection: "row",
@@ -253,7 +255,6 @@ const styles = StyleSheet.create({
     width: "80%",
     height: "40%",
   },
-
   displayBox: {
     width: "40%",
     height: 70,
@@ -271,7 +272,6 @@ const styles = StyleSheet.create({
     left: "5%",
     marginTop: 40,
   },
-
   menuRow: {
     justifyContent: "space-between",
     flexDirection: "row",
@@ -280,7 +280,6 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
     flexWrap: "wrap"
   },
-
   menu: {
     width: 110,
     height: 110,
@@ -302,7 +301,6 @@ const styles = StyleSheet.create({
     elevation: 3,
     backgroundColor: "white",
   },
-
   pressedMenu: {
     width: 110,
     height: 110,
@@ -327,7 +325,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 5,
   },
-
   notificationBoxPressed: {
     width: 35,
     height: 35,
@@ -340,7 +337,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 5,
   },
-
   notification: {
     width: "45%",
     height: "45%",

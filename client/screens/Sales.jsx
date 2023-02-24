@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View, TouchableOpacity, Pressable } from "react-native";
+import { StyleSheet, Text, View, } from "react-native";
 import BottomTab from "../components/BottomTab";
 
 export default function Sales({setPage}){
